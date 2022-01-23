@@ -1,0 +1,126 @@
+.page-set{
+    max-width: 100%;
+    height: auto;
+    margin-top: 50px;
+    /* margin-bottom: 10px; */
+}
+
+.Cart-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.qrCodeScan {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    text-align: center;
+    display: none;
+}
+
+.qrCodeScan img {
+    max-width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+.qrCodeScan_normal {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+}
+
+.qrCodeScan_normal img {
+    max-width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+.importFile {
+    text-align: left;
+}
+
+.textHeadQR {
+    margin-bottom: 0px;
+    padding: 10px;
+    /* background: #fff; */
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn-pay-cf {
+    /* display: none;
+    margin: 10%;
+    margin-top: 15%;
+    font-size: 20px; */
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgb(49, 141, 194);
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    border: 0px;
+}
+
+.importFile {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.howToPay {
+    display: grid;
+    grid-template-columns: 2fr 4fr 0fr;
+    width: 100%;
+    background: #fff;
+}
+
+.howToPay p {
+    margin: 6px;
+    margin-bottom: 0;
+}
+
+.howToPay .select-pay {
+    text-align: right;
+    border: 0;
+    background: none;
+    color: #ad8e00;
+}
+
+.other-pay {
+    text-align: right;
+}
+
+.box-order-img{
+    display: grid;
+    border: 1px solid #ad8e00;
+}
+
+.button-submit{
+    text-align: right;
+    /* width: fit-content; */
+}
+
+.btnSubmit{
+    /* position: fixed; */
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    background: #FFBF00fd;
+    border: 3px solid #FFDE6F;
+    margin-bottom: 10px;
+}
+.btnCancel{
+    /* position: fixed; */
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    background: #b6b6b6fd;
+    border: 3px solid #fdfdfd;
+    margin-bottom: 70px;
+}

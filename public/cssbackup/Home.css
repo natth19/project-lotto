@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;500&display=swap');
+.container-Home {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+.ImgSlide {
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+.ImgSlide h2{
+    color: #e0b600;
+    
+    /* text-shadow: -3px -3px 0 #e0b600, 3px -3px 0 #e0b600, -3px 3px 0 #e0b600, 3px 3px 0 #e0b600; */
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    
+}
+.ImgSlide h1{
+    font-size: 36px;
+    color: #e0b600;
+    /* color: #4e4a3e; */
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+
+.ImgSlide img {
+    width: 100%;
+}
+
+.LotterySearch {
+    /* margin: 10px; */
+    margin-top: 20px;
+}
+
+.LotterySearch h1 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.GetNumLottery {
+    margin-top: 20px;
+    /* padding: 5px; */
+    width: 100%;
+    text-align: center;
+}
+
+.GetNumLottery input {
+    font-family: 'Prompt', sans-serif;
+    border: 1px solid #e0b600;
+    margin: 5px;
+    color: #e0b600;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30px;
+    width: 3rem;
+    height: 4rem;
+}
+
+::placeholder {
+    color: #e0b7006b;
+}
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #e0b7006b;
+}
+
+.LotterySet {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    margin-top: 5%;
+}
+
+.LotterySet button {
+    width: 100%;
+    height: 100%;
+    color: #bebebe;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0px 0px 10px #e4e4e4;
+    background: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.LotterySet .btnSet1 {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}
+
+.LotterySet .btnSet3 {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.LotterySet .btnSet1:active {
+    background: #e0b600;
+    color: #fff;
+}
+
+.LotterySet .btnSet1:hover {
+    background: #e0b600;
+    color: #fff;
+}
+
+.LotterySet .btnSet2:active {
+    background: #e0b600;
+    color: #fff;
+}
+
+.LotterySet .btnSet2:hover {
+    background: #e0b600;
+    color: #fff;
+}
+
+.LotterySet .btnSet3:active {
+    background: #e0b600;
+    color: #fff;
+}
+
+.LotterySet .btnSet3:hover {
+    background: #e0b600;
+    color: #fff;
+}
+
+.ButtonSearch {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+.ButtonSearch button,input {
+    width: 100%;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    /* font-family: 'Prompt', sans-serif; */
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.ButtonSearch .btnDel {
+    background: #9f9f9f;
+    width: 40%;
+}
+
+.ButtonSearch .btnDel:active {
+    background: #808080;
+    width: 40%;
+}
+
+.ButtonSearch .btnSearch {
+    width: 60%;
+    margin: 5px;
+    background: #e0b600;
+}
+
+.ButtonSearch .btnSearch:active {
+    width: 60%;
+    background: #c7a200;
+}
+
+.LotteryList {
+    background: #fff;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.LotteryList .txtHeadList {
+    font-size: 18px;
+}
+
+.LotteryList .line {
+    /* width: 100%; */
+    border: 1px solid #e0b600;
+}
+
+.SelectBtnLotSet {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.SelectBtnLotSet .box-select {
+    box-shadow: 0px 0px 10px #cfcfcf;
+}
+
+.box-select button {
+    width: auto;
+    font-family: 'Prompt', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    border: 0px solid rgb(219, 219, 219);
+    padding: 10px;
+}
+
+@media screen and (min-width:768px) {
+    .box-select button {
+        width: 100px;
+        font-family: 'Prompt', sans-serif;
+        font-size: 12px;
+        text-align: center;
+        background: rgb(255, 255, 255);
+        border: 0px solid rgb(219, 219, 219);
+        padding: 10px;
+    }
+}
+
+
+
+/* .box-select button:hover {
+    background: #e0b600;
+    color: #fff;
+}
+.box-select button:active {
+    background: #ffd104;
+    color: #fff;
+} */
+
+
+/* list view lottery */
+
+.ListView {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.ListView .card-home-gird {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    /* max-width: 800px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 348px) {
+    .ListView .card-home-gird {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 16px;
+        row-gap: 16px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .ListView .card-home-gird {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 16px;
+        row-gap: 16px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .ListView .card-home-gird {
+        /* align-content: center; */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 16px;
+        row-gap: 16px;
+        max-width: 1200px;
+        /* margin-left: 5%;
+        margin-right: 8%; */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* .ListView .card-home-gird .Card-Lottery {
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0b600;
+    padding: 0px;
+}
+
+.ListView .Card-Lottery .lottery {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.ListView .Card-Lottery .btn-cart i {
+    text-align: right;
+    margin-right: 16px;
+    font-size: 22px;
+}
+
+.ListView .Card-Lottery .btn-cart button {
+    width: 100%;
+    width: -webkit-fill-available;
+    text-align: center;
+    border: none;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 20px;
+    color: #fff;
+    background: #02af0e;
+    padding: 10px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.ListView .Card-Lottery .btn-cart p {
+    text-align: left;
+} */
+
+.box-color{
+    border: 2.5px solid #ffd001;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}

@@ -1,0 +1,14 @@
+body {
+    background: #3a3a3a;
+    
+}
+
+.clearfix h1 ,h4{
+    color: #fff;
+}
+
+.error-404 {
+    margin-top: 200px;
+    margin-bottom: 30%;
+    transition: 0.3s;
+}

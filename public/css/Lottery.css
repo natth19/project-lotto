@@ -1,0 +1,266 @@
+.Card-Lottery {
+  /* float: left; */
+  display: none;
+  /* Hidden by default */
+  width: auto;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  /* border: 1px solid #e0b600; */
+  padding: 0px;
+}
+
+.Card-Lottery .lottery_img {
+  width: 100%;
+  height: auto;
+  /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px; */
+}
+
+.Card-Lottery .btn-cart button {
+  /* width: 100%; */
+  width: -webkit-fill-available;
+  text-align: center;
+  justify-content: center;
+  /* align-items: center; */
+  border: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  background: #02af0e;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.Card-Lottery .btn-cart :hover{
+  background: #086d0e;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  transition: 0.5s;
+}
+
+.Card-Lottery .btn-cart i {
+  text-align: right;
+  margin-right: 16px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.Card-Lottery .btn-cart p {
+  text-align: left;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.taxLot {
+  /* position: absolute; */
+  /* box-shadow: 2px 2px 4px 1px rgb(145, 145, 145);
+  border-top-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: #ffd104;
+  color: black; */
+}
+
+.taxLot .nameLot {
+  z-index: 100;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  text-align: left;
+  background: #ffd104;
+  width: fit-content;
+  height: fit-content;
+  font-size: 16px;
+  margin: 0;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  font-weight: bold;
+  right: 0;
+  top: 0;
+}
+
+.container-card {
+  overflow: hidden;
+  display: contents;
+}
+
+.Card-Lottery {
+  float: left;
+  display: none;
+  /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+
+.selectType {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+
+.selectType:hover {
+  background-color: #e0b600;
+}
+
+/* Add a dark background to the active button */
+
+.selectType.active {
+  background-color: #ffd104;
+  color: white;
+}
+
+.payment {
+  width: 100%;
+  padding: 10px;
+  background: rgb(255, 255, 255);
+  -moz-box-shadow: inset 0 0 10px 1px rgb(153, 153, 153);
+  -webkit-box-shadow: inset 0 0 10px 1px rgb(153, 153, 153);
+  box-shadow: inset 0 0 10px 1px rgb(153, 153, 153);
+  color: #000;
+  /* border: #000 solid 0.2px; */
+}
+
+.payment input {
+  font-weight: bolder;
+  visibility: hidden;
+}
+
+.payment:checked, .payment:active, .payment:hover {
+  background: #ffd104;
+  -moz-box-shadow: inset 0 0 10px 1px #ffd104;
+  -webkit-box-shadow: inset 0 0 10px 1px #ffd104;
+  box-shadow: inset 0 0 10px 1px rgb(175, 143, 0);
+}
+
+/** lottery pack **/
+
+/*! lottery for 2 */
+
+
+.image-lottery-2{
+  margin-bottom: 10%;
+}
+.image-lottery-3{
+  margin-bottom: 20%;
+}
+.image-lottery-4{
+  margin-bottom: 30%;
+}
+.image-lottery-5{
+  margin-bottom: 40%;
+}
+
+.lot-img-2 {
+  position: relative;
+  display: block;
+  text-align: center;
+  /* width: 100%;
+  height: auto; */
+}
+
+.lot-img-2 .lottery-2 {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*! lottery for 3 */
+
+.lot-img-3 {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.lot-img-3 .lottery-2 {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lot-img-3 .lottery-3 {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*! lottery for 4 */
+
+.lot-img-4 {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.lot-img-4 .lottery-2 {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lot-img-4 .lottery-3 {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lot-img-4 .lottery-4 {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*! lottery for 5 */
+
+.lot-img-5 {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.lot-img-5 .lottery-2 {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lot-img-5 .lottery-3 {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lot-img-5 .lottery-4 {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lot-img-5 .lottery-5 {
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
