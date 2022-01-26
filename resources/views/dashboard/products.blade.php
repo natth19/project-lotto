@@ -34,7 +34,7 @@
         <input class="edit-data" name="last2num2" id="last2num2" type="tel" style="width: 40px;text-align: center;" maxlength="1">
         <button type="submit" style="border: none;background:none;"><i class="fa fa-search"></i></button>
     </form>
-
+    <!-- <p> จำนวนเลขท้าย 2 ตัว : count $products</p> -->
 </div>
 <br>
 

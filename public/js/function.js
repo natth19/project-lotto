@@ -58,15 +58,14 @@ function set3last() {
 }
 
 function set3first() {
-    var btnSet3 = [
-        document.getElementById("lotnum1").disabled = false,
-        document.getElementById("lotnum2").disabled = false,
-        document.getElementById("lotnum3").disabled = false,
-        document.getElementById("lotnum4").disabled = true,
-        document.getElementById("lotnum5").disabled = true,
-        document.getElementById("lotnum6").disabled = true,
-
-    ]
+    
+    document.getElementById("lotnum1").disabled = false;
+    document.getElementById("lotnum2").disabled = false;
+    document.getElementById("lotnum3").disabled = false;
+    document.getElementById("lotnum4").disabled = true;
+    document.getElementById("lotnum5").disabled = true;
+    document.getElementById("lotnum6").disabled = true;
+    
 }
 
 function clearSearch() {

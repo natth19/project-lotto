@@ -49,6 +49,11 @@ Auth::routes();
 // Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('home/search/all/', [App\Http\Controllers\HomeController::class, 'lottoAll'])->name('home.lottoAll');
+Route::get('home/search/Fthree/', [App\Http\Controllers\HomeController::class, 'lottoFirst3'])->name('home.lottoFirst3');
+Route::get('home/search/Lthree/', [App\Http\Controllers\HomeController::class, 'lottoLast3'])->name('home.lottoLast3');
+Route::get('home/search/Ltwo', [App\Http\Controllers\HomeController::class, 'lottoLast2'])->name('home.lottoLast2');
+
 Route::get('contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 
 Route::get('profile', [App\Http\Controllers\ProfileController::class, 'profile'])->name('profile');

@@ -71,8 +71,11 @@ class DashboardController extends Controller
         ])
             ->paginate(50);
 
+        // $resultNum1 = Input::get('last2num1');
+        // $resultNum2 = Input::get('last2num2');
+        
 
-        return view('dashboard.products', ['products' => $products], compact('count_prd', 'count_prdSoldOut', 'count_prdHave'))
+        return view('dashboard.details.lottery_report', ['products' => $products], compact('num1','num2'))
             ->with('i', (request()->input('page', 1) - 1) * 50);
     }
 
@@ -310,6 +313,8 @@ class DashboardController extends Controller
             ->where('first_name', 'like', '%' . $search . '%')
             ->orWhere('last_name', 'like', '%' . $search . '%')
             ->orWhere('user_phone', 'like', '%' . $search . '%')
+            ->orWhere('user_address', 'like', '%' . $search . '%')
+            ->orWhere('user_status', 'like', '%' . $search . '%')
             ->paginate(50);
         return view('dashboard.members', ['members' => $members])->with('i', (request()->input('page', 1) - 1) * 50);
     }

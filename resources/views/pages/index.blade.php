@@ -4,6 +4,15 @@
 <link rel="stylesheet" href="/css/Home.css">
 <link rel="stylesheet" href="/css/Lottery.css">
 <!-- Content -->
+<style>
+    .pagination {
+        justify-content: center;
+        margin-top: 50px;
+    }
+    .page-link{
+        z-index: auto;
+    }
+</style>
 <div class="container-Home">
 
     <div class="ImgSlide">
@@ -13,11 +22,11 @@
             <img class="logo_login" src="/images/logo.png" alt="โอ่งข้าวโอ่งน้ำพารวย" style="max-width: 150px;height:auto;">
         </div>
     </div>
-    <form class="LotterySearch" action="/home" method="GET" role="search">
+    <form class="LotterySearch" action="{{ route('home.lottoAll') }}" method="get" id="lotAll">
         @csrf
         <h1>กรอกเลขล็อตเตอรี่ที่ต้องการค้นหา</h1>
         <!-- All -->
-        <div class="GetNumLottery" id="search" style="display: none;">
+        <div class="GetNumLottery" id="search" style="display: block;">
             <input class="lotSearch" id="lotnum1" type="text" name="lotnum1" maxlength="1" pattern="[0-9]" inputmode="numeric" placeholder="" onkeyup="moveOnMax(this,'lotnum2')" onkeypress="return onlyNumberKey(event)">
             <input class="lotSearch" id="lotnum2" type="text" name="lotnum2" maxlength="1" pattern="[0-9]" inputmode="numeric" placeholder="" onkeyup="moveOnMax(this,'lotnum3')" onkeypress="return onlyNumberKey(event)">
             <input class="lotSearch" id="lotnum3" type="text" name="lotnum3" maxlength="1" pattern="[0-9]" inputmode="numeric" placeholder="" onkeyup="moveOnMax(this,'lotnum4')" onkeypress="return onlyNumberKey(event)">
@@ -26,14 +35,14 @@
             <input class="lotSearch" id="lotnum6" type="text" name="lotnum6" maxlength="1" pattern="[0-9]" inputmode="numeric" placeholder="" onkeyup="moveOnMax(this,'submit')" onkeypress="return onlyNumberKey(event)">
         </div>
 
-        
+
         <div class="LotterySet">
-            <button type="button" class="btnSet3" onclick="set3first()">เลขหน้า 3 ตัว</button>
-            <button type="button" class="btnSet2" onclick="set3last()">เลขท้าย 3 ตัว</button>
-            <button type="button" class="btnSet1" onclick="set2last()">เลขท้าย 2 ตัว</button>
+            <button type="button" class="btnSet3" id="btnSet3" onclick="set3first()">เลขหน้า 3 ตัว</button>
+            <button type="button" class="btnSet2" id="btnSet2" onclick="set3last()">เลขท้าย 3 ตัว</button>
+            <button type="button" class="btnSet1" id="btnSet1" onclick="set2last()">เลขท้าย 2 ตัว</button>
         </div>
         <div class="ButtonSearch">
-            <button type="button" class="btnDel" onclick="clearSearch()">ลบตัวเลข</button>
+            <button type="button" class="btnDel" id="btnClearNum" onclick="clearSearch()">ลบตัวเลข</button>
             <!-- <button class="btnSearch">ค้นหาล็อตเตอรี่</button> -->
             <input type="submit" class="btnSearch" id="submit" value="ค้นหาล็อตเตอรี่">
         </div>
@@ -66,9 +75,10 @@
             <div class="card-home-gird">
 
                 @foreach ($lottery as $key => $value)
+                
                 @if($value->qty === 1)
-                <div class="container-card">
-                    <div class="Card-Lottery {{ $value->lottery_type }}" id='{{ $value->id }}'>
+                <div class="container-card" id="row_{{ ++$i }}">
+                    <div class="Card-Lottery {{ $value->lottery_type }}" id='{{ $value->lotto_code }}'>
                         <div class="container-card taxLot">
                             <p class="nameLot">ชุด {{ $value->lottery_type }} ใบ</p>
                         </div>
@@ -127,6 +137,7 @@
 
                                     @csrf
                                     <input type="hidden" value="{{ $value->id }}" name="lottery_id">
+                                    <input type="hidden" value="{{ $value->lotto_code }}" name="lotto_code">
                                     <input type="hidden" value="{{ $value->lottery_number }}" name="lottery_number">
                                     <input type="hidden" value="{{ $value->lottery_type }}" name="lottery_type">
                                     <input type="hidden" value="{{ $value->lottery_year }}" name="lottery_year">
@@ -155,7 +166,9 @@
                 @endforeach
 
             </div>
-
+            <div class="paginate-box">
+                {!! $lottery->links() !!}
+            </div>
         </div>
 
     </div>
@@ -211,6 +224,37 @@
             this.className += " active";
         });
     }
+
+    $(document).ready(function() {
+        $("#btnSet3").click(function() {
+            $('#lotAll').attr('action', "{{ route('home.lottoFirst3') }}");
+            // $("#lotAll").hide()
+            // $("#lotF3").show()
+            // $("#lotL3").hide()
+            // $("#lotL2").hide()
+        });
+        $("#btnSet2").click(function() {
+            $('#lotAll').attr('action', "{{ route('home.lottoLast3') }}");
+            // $("#lotAll").hide()
+            // $("#lotF3").hide()
+            // $("#lotL3").show()
+            // $("#lotL2").hide()
+        });
+        $("#btnSet1").click(function() {
+            $('#lotAll').attr('action', "{{ route('home.lottoLast2') }}");
+            // $("#lotAll").hide()
+            // $("#lotF3").hide()
+            // $("#lotL3").hide()
+            // $("#lotL2").show()
+        });
+        $("#btnClearNum").click(function() {
+            $('#lotAll').attr('action', "{{ route('home.lottoAll') }}");
+            // $("#lotAll").hide()
+            // $("#lotF3").hide()
+            // $("#lotL3").hide()
+            // $("#lotL2").show()
+        });
+    });
 </script>
 
 @endsection

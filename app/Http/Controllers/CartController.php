@@ -54,6 +54,7 @@ class CartController extends Controller
 
 
             'id' => $request->lottery_id,
+            'lotto_code' => $request->lotto_code,
             'lottery_number' => $request->lottery_number,
             'lottery_type' => $request->lottery_type,
             'lottery_year' => $request->lottery_year,
@@ -69,9 +70,12 @@ class CartController extends Controller
             // )
         ]);
 
-        DB::table('lottery')->where('id', $request->lottery_id)->update([
+        DB::table('lottery')->where('lotto_code', $request->lotto_code)->update([
             'qty' => 0
         ]);
+        // DB::table('lottery')->where('id', $request->lottery_id)->update([
+        //     'qty' => 0
+        // ]);
 
 
         session()->flash('success', 'Product is Added to Cart Successfully !');
@@ -101,7 +105,7 @@ class CartController extends Controller
     {
         \Cart::remove($request->id);
 
-        DB::table('lottery')->where('id', $request->id)->update([
+        DB::table('lottery')->where('lotto_code', $request->id)->update([
             'qty' => 1
         ]);
 
