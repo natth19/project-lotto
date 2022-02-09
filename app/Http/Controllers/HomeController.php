@@ -8,6 +8,8 @@ use Darryldecode\Cart\Cart;
 use Illuminate\Support\Facades\DB;
 use League\CommonMark\Block\Element\Document;
 use phpDocumentor\Reflection\Types\Null_;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Response;
 
 class HomeController extends Controller
 {
@@ -29,93 +31,10 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-        $lottery = DB::table('lottery')->paginate(50);
-        // $query = DB::table('lottery')->select("lotto_code")->distinct();
-        // $lottery = $query->paginate(50);
-        // $lottery = DB::table('lottery')->groupBy('lotto_code')->havingRaw('count(*) > 1')->paginate(50);
-
-
-        // $query = DB::table('lottery')->distinct('lotto_code')->select('lotto_code');
-        // $lottery = $query
-        // // ->addSelect('id')
-        // ->addSelect('lottery_number')
-        // ->addSelect('lottery_type')
-        // // ->addSelect('lottery_img')
-        // ->addSelect('lottery_year')
-        // ->addSelect('lottery_round')
-        // ->addSelect('lottery_set')
-        // ->addSelect('lottery_date')
-        // ->addSelect('price')
-        // ->addSelect('fee')
-        // ->addSelect('qty')
-        // ->paginate(50);
-
-        // $lottery = DB::table('lottery')
-        //             ->select('lotto_code', DB::raw('count(`lotto_code`) as occurences'))
-        //             ->groupBy('lotto_code')
-        //             ->having('occurences', '>', 1)
-        //             ->paginate(50);
-
-        // $lottoSet = DB::table('lottery')->select('lottery_img')->where('lotto_code' ,'=' , $query)->get();
-        // $entity['columns'] = ['username', 'surname'];
-
-        // $groupBy = implode(',', $entity['columns']);
-
-        // $subQuery = DB::table('list')
-        //     ->select('*')
-        //     ->groupBy($groupBy)
-        //     ->havingRaw('(count(id) > 1))');
-
-        // $result = DB::table('list')
-        //     ->select('*')
-        //     ->join(
-        //         DB::raw("({$subQuery->toSql()}) dup"),
-        //         function ($join) use ($entity) {
-        //             foreach ($entity['columns'] as $column) {
-        //                 $join->on('list.' . $column, '=', 'dup.' . $column);
-        //             }
-        //         }
-        //     )
-        //     ->toSql();
-        // or ->get(); obviously
-
-        // dd($result);
-
-
-
+        $lottery = DB::table('lottery')->groupBy('lotto_code')->paginate(50);
         return view('pages.index', compact('lottery'))
             ->with('i', (request()->input('page', 1) - 1) * 50);
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    // public function search(Request $request)
-    // {
-
-    //     $lottery = DB::table('lottery')->where([
-    //         ['lottery_number', '!=', Null],
-    //         [function ($query) use ($request) {
-    //             if (($lotnum1 = $request->lotnum1)) {
-    //                 $query->OrWhere('lottery_number1', 'LIKE', '%' . $lotnum1 . '%');
-    //             } elseif (($lotnum2 = $request->lotnum2)) {
-    //                 $query->OrWhere('lottery_number2', 'LIKE', '%' . $lotnum2 . '%');
-    //             } elseif (($lotnum3 = $request->lotnum3)) {
-    //                 $query->OrWhere('lottery_number3', 'LIKE', '%' . $lotnum3 . '%');
-    //             } elseif (($lotnum4 = $request->lotnum4)) {
-    //                 $query->OrWhere('lottery_number4', 'LIKE', '%' . $lotnum4 . '%');
-    //             } elseif (($lotnum5 = $request->lotnum5)) {
-    //                 $query->OrWhere('lottery_number5', 'LIKE', '%' . $lotnum5 . '%');
-    //             } elseif (($lotnum6 = $request->lotnum6)) {
-    //                 $query->OrWhere('lottery_number6', 'LIKE', '%' . $lotnum6 . '%');
-    //             }
-    //         }]
-    //     ])
-    //         ->orderBy("lottery_number", "desc")
-    //         ->get();
-    // }
 
     public function lottoAll(Request $request)
     {
@@ -144,8 +63,7 @@ class HomeController extends Controller
 
             return view('pages.index', ['lottery' => $lottery])
                 ->with('i', (request()->input('page', 1) - 1) * 50);
-        }
-        else if (count($request->all()) < 0) {
+        } else if (count($request->all()) < 0) {
 
             return redirect()->route('home');
         }

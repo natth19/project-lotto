@@ -70,18 +70,7 @@ function set3first() {
 
 function clearSearch() {
 
-    document.getElementById('lotnum1').value = '';
-    document.getElementById('lotnum2').value = '';
-    document.getElementById('lotnum3').value = '';
-    document.getElementById('lotnum4').value = '';
-    document.getElementById('lotnum5').value = '';
-    document.getElementById('lotnum6').value = '';
-    document.getElementById("lotnum1").disabled = false;
-    document.getElementById("lotnum2").disabled = false;
-    document.getElementById("lotnum3").disabled = false;
-    document.getElementById("lotnum4").disabled = false;
-    document.getElementById("lotnum5").disabled = false;
-    document.getElementById("lotnum6").disabled = false;
+    window.location.href = "/home";
 }
 
 function moveOnMax(field, nextFieldID) {

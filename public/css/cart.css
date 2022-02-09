@@ -209,7 +209,7 @@ table .detail-title {
 
 @media screen and (max-width: 1920px) {
     .Card-Lottery-Order .lottery {
-        width: 400px;
+        width: 285px;
         height: auto;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;

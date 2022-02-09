@@ -9,10 +9,12 @@
         justify-content: center;
         margin-top: 50px;
     }
-    .page-link{
+
+    .page-link {
         z-index: auto;
     }
 </style>
+
 <div class="container-Home">
 
     <div class="ImgSlide">
@@ -71,11 +73,11 @@
             </div>
         </div>
         <div class="ListView">
-
+            
             <div class="card-home-gird">
 
                 @foreach ($lottery as $key => $value)
-                
+
                 @if($value->qty === 1)
                 <div class="container-card" id="row_{{ ++$i }}">
                     <div class="Card-Lottery {{ $value->lottery_type }}" id='{{ $value->lotto_code }}'>
@@ -85,7 +87,7 @@
                         <div class="box-color">
                             @if($value->lottery_type === 1)
                             <div>
-                                <img class="lottery_img" src="{{ url($value->lottery_img) }}">
+                                <img class="lottery_img" src="{{ $value->lottery_img }}">
                             </div>
                             @endif
 
@@ -228,31 +230,19 @@
     $(document).ready(function() {
         $("#btnSet3").click(function() {
             $('#lotAll').attr('action', "{{ route('home.lottoFirst3') }}");
-            // $("#lotAll").hide()
-            // $("#lotF3").show()
-            // $("#lotL3").hide()
-            // $("#lotL2").hide()
+
         });
         $("#btnSet2").click(function() {
             $('#lotAll').attr('action', "{{ route('home.lottoLast3') }}");
-            // $("#lotAll").hide()
-            // $("#lotF3").hide()
-            // $("#lotL3").show()
-            // $("#lotL2").hide()
+
         });
         $("#btnSet1").click(function() {
             $('#lotAll').attr('action', "{{ route('home.lottoLast2') }}");
-            // $("#lotAll").hide()
-            // $("#lotF3").hide()
-            // $("#lotL3").hide()
-            // $("#lotL2").show()
+
         });
         $("#btnClearNum").click(function() {
             $('#lotAll').attr('action', "{{ route('home.lottoAll') }}");
-            // $("#lotAll").hide()
-            // $("#lotF3").hide()
-            // $("#lotL3").hide()
-            // $("#lotL2").show()
+
         });
     });
 </script>

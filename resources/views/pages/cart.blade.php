@@ -6,6 +6,19 @@
 <link rel="stylesheet" href="/css/cart.css">
 <link rel="stylesheet" href="/css/Lottery.css">
 <link rel="stylesheet" href="/css/radio.css">
+
+<style>
+    .box-color {
+        border: 2.5px solid #ffd001;
+        inline-size: fit-content;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .Card-Lottery-Order {
+        text-align: -webkit-center;
+    }
+</style>
 <!-- Content -->
 <div class="Cart-container">
     <div class="head-card">
@@ -61,76 +74,79 @@
         <div class="card-order" id="row_{{$value->id}}">
             <div class="order">
                 <div class="Card-Lottery-Order">
-                    @if ( $value -> lottery_type === '1' )
-                    <div class="box-order-img">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery" width="285px" max-height="auto">
-                    </div>
-                    @endif
-
-                    @if ( $value -> lottery_type === '2' )
-                    <div class="image-lottery-2">
-                        <div class="lot-img-2">
-                            <img class="lottery-1 lottery_img" src="{{ $value->lottery_img }}"  class="lottery" width="285px" max-height="auto">
-                            <img class="lottery-2 lottery_img" src="{{ $value->lottery_img }}"  class="lottery" width="285px" max-height="auto">
+                    <div class="box-color">
+                        @if ( $value -> lottery_type === '1' )
+                        <div class="image-lottery-1">
+                            <div class="lot-img-1">
+                                <img src="{{ url($value->lottery_img) }}" class="lottery" width="285px" max-height="auto">
+                            </div>
                         </div>
-                    </div>
-                    <div class="box-order-img" style="display: none;">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery" >
-                        <img src="{{ url($value->lottery_img) }}" class="lottery" >
-                    </div>
-                    @endif
+                        @endif
 
-                    @if ( $value -> lottery_type === '3' )
-                    <div class="image-lottery-3">
-                        <div class="lot-img-3">
-                            <img class="lottery-1 lottery_img" src="{{ $value->lottery_img }}"  class="lottery" width="285px" max-height="auto">
-                            <img class="lottery-2 lottery_img" src="{{ $value->lottery_img }}"  class="lottery" width="285px" max-height="auto">
-                            <img class="lottery-3 lottery_img" src="{{ $value->lottery_img }}"  class="lottery" width="285px" max-height="auto">
+                        @if ( $value -> lottery_type === '2' )
+                        <div class="image-lottery-2">
+                            <div class="lot-img-2">
+                                <img class="lottery-1 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
+                                <img class="lottery-2 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
+                            </div>
                         </div>
-                    </div>
-                    <div class="box-order-img" style="display: none;">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                    </div>
-                    @endif
-
-                    @if ( $value -> lottery_type === '4' )
-                    <div class="image-lottery-4">
-                        <div class="lot-img-4" style="display: none;">
-                            <img class="lottery-1 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
-                            <img class="lottery-2 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
-                            <img class="lottery-3 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
-                            <img class="lottery-4 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
+                        <div class="box-order-img" style="display: none;">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
                         </div>
-                    </div>
-                    <div class="box-order-img" style="display: none;">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                    </div>
-                    @endif
+                        @endif
 
-                    @if ( $value -> lottery_type === '5' )
-                    <div class="image-lottery-5">
-                        <div class="lot-img-5">
-                            <img class="lottery-1 lottery_img" src="{{ url($value->lottery_img) }}" class="lottery" width="285px" max-height="auto">
-                            <img class="lottery-2 lottery_img" src="{{ url($value->lottery_img) }}" class="lottery" width="285px" max-height="auto">
-                            <img class="lottery-3 lottery_img" src="{{ url($value->lottery_img) }}" class="lottery" width="285px" max-height="auto">
-                            <img class="lottery-4 lottery_img" src="{{ url($value->lottery_img) }}" class="lottery" width="285px" max-height="auto">
-                            <img class="lottery-5 lottery_img" src="{{ url($value->lottery_img) }}" class="lottery" width="285px" max-height="auto">
+                        @if ( $value -> lottery_type === '3' )
+                        <div class="image-lottery-3">
+                            <div class="lot-img-3">
+                                <img class="lottery-1 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
+                                <img class="lottery-2 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
+                                <img class="lottery-3 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
+                            </div>
                         </div>
-                    </div>
-                    <div class="box-order-img" style="display: none;">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                        <img src="{{ url($value->lottery_img) }}" class="lottery">
-                    </div>
-                    @endif
+                        <div class="box-order-img" style="display: none;">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                        </div>
+                        @endif
 
+                        @if ( $value -> lottery_type === '4' )
+                        <div class="image-lottery-4">
+                            <div class="lot-img-4" style="display: block;">
+                                <img class="lottery-1 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
+                                <img class="lottery-2 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
+                                <img class="lottery-3 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
+                                <img class="lottery-4 lottery_img" src="{{ $value->lottery_img }}" class="lottery" width="285px" max-height="auto">
+                            </div>
+                        </div>
+                        <div class="box-order-img" style="display: none;">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                        </div>
+                        @endif
+
+                        @if ( $value -> lottery_type === '5' )
+                        <div class="image-lottery-5">
+                            <div class="lot-img-5">
+                                <img class="lottery-1 lottery_img" src="{{ $value->lottery_img  }}" class="lottery" width="285px" max-height="auto">
+                                <img class="lottery-2 lottery_img" src="{{ $value->lottery_img  }}" class="lottery" width="285px" max-height="auto">
+                                <img class="lottery-3 lottery_img" src="{{ $value->lottery_img  }}" class="lottery" width="285px" max-height="auto">
+                                <img class="lottery-4 lottery_img" src="{{ $value->lottery_img  }}" class="lottery" width="285px" max-height="auto">
+                                <img class="lottery-5 lottery_img" src="{{ $value->lottery_img  }}" class="lottery" width="285px" max-height="auto">
+                            </div>
+                        </div>
+                        <div class="box-order-img" style="display: none;">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                            <img src="{{ url($value->lottery_img) }}" class="lottery">
+                        </div>
+                        @endif
+                    </div>
                 </div>
 
                 <div class="detail-order">
@@ -148,7 +164,7 @@
                                 <td class="detail-result">{{ $value->lottery_number }}</td>
                                 <td class="detail-result">{{ $value->lottery_type }}</td>
                                 <td class="detail-result">{{$value->price }}฿</td>
-                                
+
                                 <form action="{{ route('cart.remove') }}" method="POST">
                                     @csrf
                                     <input type="hidden" value="{{ $value->id }}" name="id">
@@ -233,7 +249,7 @@
                                 <input type="hidden" value="{{ $order->lottery_type }}" name="billing_lotType" required>
                                 <input type="hidden" value="{{ $order->lottery_year }}" name="billing_lotYear" required>
                                 <input type="hidden" value="{{ $order->lottery_round }}" name="billing_lotRound" required>
-                                <input type="hidden" value="{{ $order->lottery_set }}" name="billing_lotSet" required>
+                                <!-- <input type="hidden" value="{{ $order->lottery_set }}" name="billing_lotSet" required> -->
                                 <input type="hidden" value="{{ $order->lottery_date }}" name="billing_lotDate" required>
                                 <input type="hidden" value="{{ $order->attributes->lottery_img }}" name="billing_lot_img" required>
                                 <input type="hidden" value="{{ $order->price }}" name="billing_price" required>
